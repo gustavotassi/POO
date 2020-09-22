@@ -1,4 +1,4 @@
-
+    
 package fatec.poo.model;
 
 /**
@@ -36,7 +36,8 @@ public class GameShop {
     }
     
     public void brinde() {
-        comprar(qtdeHoras);
+        comprar(qtdeHoras); //compra a quantidade de horas que o usuário tem, ou seja, dobra
+        //qtdeHoras *= 2; //faz o mesmo
     }
     
 }
