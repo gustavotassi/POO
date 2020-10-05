@@ -11,16 +11,19 @@ public abstract class Funcionario {
     private String dtAdmissao;
     private String cargo;
 
-    public Funcionario(int registro, String nome, String dtAdmissao, String cargo) {
+    public Funcionario(int registro, String nome, String dtAdmissao) {
         this.registro = registro;
         this.nome = nome;
         this.dtAdmissao = dtAdmissao;
-        this.cargo = cargo;
     }
 
     // Sem polimorfismo
     public String getCargo() {
         return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
     
     public int getRegistro() {
@@ -46,4 +49,5 @@ public abstract class Funcionario {
     public double calcSalLiquido() {
         return (calcSalBruto() - calcDesconto());
     }
+    
 }

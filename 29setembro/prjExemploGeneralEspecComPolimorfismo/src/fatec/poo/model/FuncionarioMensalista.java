@@ -9,8 +9,8 @@ public class FuncionarioMensalista extends Funcionario {
     private double numSalMin;
     private double valSalMin;
 
-    public FuncionarioMensalista(int registro, String nome, String dtAdmissao, String cargo,double valSalMin) {
-        super(registro, nome, dtAdmissao, cargo);
+    public FuncionarioMensalista(int registro, String nome, String dtAdmissao, double valSalMin) {
+        super(registro, nome, dtAdmissao);
         this.valSalMin = valSalMin;
     }
 
@@ -19,6 +19,7 @@ public class FuncionarioMensalista extends Funcionario {
     }
 
     @Override
+    //aplicando polimorfismo
     public double calcSalBruto() {
         return (valSalMin * numSalMin);
     }
