@@ -10,8 +10,8 @@ public class FuncionarioHorista extends Funcionario {
     private double valHoraTrab;
     private int qtdeHoraTrab;
 
-    public FuncionarioHorista(int registro, String nome, String dtAdmissao, double valHoraTrab) {
-        super(registro, nome, dtAdmissao); //chamada do método construtor da classe funcionário
+    public FuncionarioHorista(int registro, String nome, String dtAdmissao, String cargo, double valHoraTrab) {
+        super(registro, nome, dtAdmissao, cargo); //chamada do método construtor da classe funcionário
         this.valHoraTrab = valHoraTrab;
     }
 
