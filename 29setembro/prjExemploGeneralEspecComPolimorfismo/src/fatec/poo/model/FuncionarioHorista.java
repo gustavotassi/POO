@@ -32,7 +32,7 @@ public class FuncionarioHorista extends Funcionario {
     @Override
     //aplicando polimorfismo
     public double calcSalLiquido() {
-        return (calcSalBruto() + calcGratificacao() - calcDesconto());
+        return (super.calcSalLiquido() - calcDesconto());
     }
 
 }

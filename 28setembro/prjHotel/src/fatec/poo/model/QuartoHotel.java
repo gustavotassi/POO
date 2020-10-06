@@ -2,39 +2,37 @@ package fatec.poo.model;
 
 /**
  *
- * @author Gustavo
+ * @author Dimas
  */
 public class QuartoHotel {
 
     private int numQuarto;
     private double valorDiaria;
     private int numRG;
-    private boolean situacao; //false - livre | true - ocupado
+    private boolean situacao;//false-livre   true-ocupado
     private double totalFaturado;
 
     public QuartoHotel(int numQuarto, double valorDiaria) {
         this.numQuarto = numQuarto;
         this.valorDiaria = valorDiaria;
-        //Instruções redundantes
-        //situacao = false;
-        //totalFaturado = 0;
+        situacao = false; //livre
+        totalFaturado = 0;
     }
 
-    public void reservar(int numRG) {
-        this.numRG = numRG;
-        situacao = true;
+    public void reservar(int rg) {
+        numRG = rg;
+        situacao = true; //ocupado
     }
 
-    public double liberar(int numDias) {
-        double valFatura;
-
+    public double liberar(int dias) {
+        double valHosped;
         numRG = 0;
-        situacao = false;
+        situacao = false; //livre 
 
-        valFatura = numDias * valorDiaria;
-        totalFaturado += valFatura;
+        valHosped = valorDiaria * dias;
+        totalFaturado += valHosped;
 
-        return valFatura;
+        return valHosped;
     }
 
     public boolean getSituacao() {
@@ -45,4 +43,7 @@ public class QuartoHotel {
         return totalFaturado;
     }
 
+    public int getNumQuarto() {
+        return (numQuarto);
+    }
 }
