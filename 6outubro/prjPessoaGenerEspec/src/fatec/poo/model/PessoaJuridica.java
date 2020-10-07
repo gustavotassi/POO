@@ -28,6 +28,6 @@ public class PessoaJuridica extends Pessoa {
 
     @Override
     public double calcBonus(int ano) {
-        return ((taxaIncentivo * getTotalCompras()) * (ano - getAnoInscricao()));
+        return ((taxaIncentivo/100 * getTotalCompras()) * (ano - getAnoInscricao()));
     }
 }

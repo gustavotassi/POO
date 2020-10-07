@@ -37,10 +37,10 @@ public class FuncionarioComissionado extends Funcionario {
     }
     
     public double calcGratificacao() {
-        if (getTotalVendas() <= 5000) {
-            return 0.0;
-        } else if (getTotalVendas() <= 10000) {
-            return (0.03 * calcSalBruto());
+        if (totalVendas <= 5000) {
+            return 0;
+        } else if (totalVendas > 5000 && totalVendas <= 10000) { // !important
+            return (0.035 * calcSalBruto());
         } else {
             return (0.05 * calcSalBruto());
         }
@@ -49,13 +49,13 @@ public class FuncionarioComissionado extends Funcionario {
     @Override
     //aplicando polimorfismo
     public double calcSalBruto() {
-       return (salBase + taxaComissao * totalVendas);
+       return (salBase + (taxaComissao/100 * totalVendas));
     }
     
     @Override
     //aplicando polimorfismo
     public double calcSalLiquido() {
-        return (calcSalBruto() - super.calcDesconto() + calcGratificacao());
+        return (super.calcSalLiquido() + calcGratificacao());
     }
     
 }
